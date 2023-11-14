@@ -25,8 +25,8 @@ if btn_click == True:
         query_point_final = np.concatenate((age_transformed, cat_tr_r), axis=1)
         pred = svc_model.predict(query_point_final)
         if pred == [1]:
-            st.success('You are going to survive')
+            st.success('You are going to survive..')
         else:
-            st.warning('You are going to die')
+            st.warning('You are going to die..')
     else:
         st.error("Enter the values properly.")
