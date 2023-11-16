@@ -1,9 +1,12 @@
 import streamlit as st
 import numpy as np
 from pickle import load
+from pathlib import Path
 
-scaler = load(open('./models/standard_scaler_2.pkl', 'rb'))
-model = load(open('./models/classifier_2.pkl', 'rb'))
+scaler = Path(__file__).parents[0] / 'models/standard_scaler_2.pkl'
+model = Path(__file__).parents[0] / './models/classifier_2.pkl'
+# scaler = load(open('./models/standard_scaler_2.pkl', 'rb'))
+# model = load(open('./models/classifier_2.pkl', 'rb'))
 
 PCLASS = st.selectbox("Passenger Class",['1st','2nd','3rd'], placeholder="Enter your Ticket Class")
 GENDER = st.selectbox("Gender",['Male','Female'], placeholder="Enter Your Gender")
