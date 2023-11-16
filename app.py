@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 from pickle import load
+import sklearn
 
 scaler = load(open('./models/standard_scaler_2.pkl', 'rb'))
 model = load(open('./models/classifier_2.pkl', 'rb'))
@@ -20,7 +21,7 @@ EMBARKED = st.selectbox("Embarked From",['Cherbourg','Queenstown','Southampton']
 btn_click = st.button("Predict")
 
 if btn_click == True:
-    if PCLASS and GENDER and AGE and ALONE and FAMILY and EMBARKED:
+    if PCLASS and GENDER and AGE and ALONE or FAMILY and EMBARKED:
         
         #setting up age
         AGE_F = np.array([float(AGE)]).reshape(1, -1)
