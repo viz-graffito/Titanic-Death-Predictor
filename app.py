@@ -3,8 +3,10 @@ import numpy as np
 from pickle import load
 from pathlib import Path
 
-scaler = Path(__file__).parents[0] / 'models/standard_scaler_2.pkl'
-model = Path(__file__).parents[0] / 'models/classifier_2.pkl'
+scaler_ = Path(__file__).parents[0] / 'models/standard_scaler_2.pkl'
+model_ = Path(__file__).parents[0] / 'models/classifier_2.pkl'
+scaler = load(open(scaler_, 'rb'))
+model = load(open(model_, 'rb'))
 # scaler = load(open('./models/standard_scaler_2.pkl', 'rb'))
 # model = load(open('./models/classifier_2.pkl', 'rb'))
 
