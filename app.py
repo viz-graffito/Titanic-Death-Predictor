@@ -69,8 +69,8 @@ if btn_click == True:
         INPUT = np.concatenate((AGE_Var,INP_1), axis=1 ) 
         PREDICTION = model.predict(INPUT)
         if PREDICTION == [1]:
-            st.success('You are going to survive..')
+            st.markdown("![Alt Text](https://data.whicdn.com/images/343937540/original.gif)")
         else:
-            st.warning('You are going to die..')
+            st.markdown("![Alt Text](https://media.tenor.com/8qO4Ko-5T4sAAAAC/cold-drowning.gif)")
     else:
         st.error("Enter the values properly.")
