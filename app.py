@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 from pickle import load
 
-scaler = load(open('./models/standard_scaler_2.pkl', 'rb'))
+scaler = load(open('https://github.com/viz-graffito/Titanic-Death-Predictor/blob/master/models/standard_scaler_2.pkl', 'rb'))
 model = load(open('./models/classifier_2.pkl', 'rb'))
 
 PCLASS = st.selectbox("Passenger Class",['1st','2nd','3rd'], placeholder="Enter your Ticket Class")
